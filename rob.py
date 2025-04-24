@@ -47,7 +47,7 @@ while True:
             [x_x, y_x],
             [x_y, y_y],
             [x_xy, y_xy]
-        ], dtype=np.float32)
+        ], dtype=np.int)
 
         pts_real = np.array([
             [0, 0],

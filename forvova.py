@@ -12,6 +12,7 @@ class coords:
         self.x = None
         self.y = None
 
+
     def coordinates(self):
         try:
             while True:
@@ -19,6 +20,7 @@ class coords:
                 if not ret:
                     print("Ошибка получения кадра")
                     break
+                frame = cv2.convertScaleAbs(frame, alpha=0.8, beta=-10)
                 
                 results = self.model.predict(source=frame, conf=0.35, verbose=False)
                 frame = results[0].plot()
@@ -70,6 +72,8 @@ class coords:
 
                     cv2.putText(frame, f"Bottle: X={self.x:.1f}cm, Y={self.y:.1f}cm", 
                                     (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
+
+
                 cv2.imshow("Webcam YOLO Detection", frame)
 
                 if cv2.waitKey(1) & 0xFF == ord('q'):

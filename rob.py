@@ -15,9 +15,11 @@ while True:
     if not ret:
         print("Ошибка получения кадра")
         break
-    
+    frame = cv2.convertScaleAbs(frame, alpha=0.8, beta=-10)
     results = model.predict(source=frame, conf=0.35, verbose=False)
+
     frame = results[0].plot()
+
 
     object_positions = {}
 

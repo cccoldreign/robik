@@ -68,8 +68,8 @@ class coords:
 
                     self.x, self.y = bottle_real[0][0]
 
-                cv2.putText(frame, f"Bottle: X={self.x:.1f}cm, Y={self.y:.1f}cm", 
-                                (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
+                    cv2.putText(frame, f"Bottle: X={self.x:.1f}cm, Y={self.y:.1f}cm", 
+                                    (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
                 cv2.imshow("Webcam YOLO Detection", frame)
 
                 if cv2.waitKey(1) & 0xFF == ord('q'):

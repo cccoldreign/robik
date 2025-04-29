@@ -1,6 +1,6 @@
 from forvova import coords
 
-path = "/Users/coldreign/robo3/best.pt"
+path = "/Users/coldreign/robo3/best_ncnn_model"
 camera_vision = coords(path)
 
 x, y = camera_vision.coordinates()

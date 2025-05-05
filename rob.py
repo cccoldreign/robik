@@ -7,7 +7,6 @@ model = YOLO("/Users/coldreign/robotStasik/runs/detect/train3/weights/best.pt")
 cap = cv2.VideoCapture(0)
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 820)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 400)
-
 square_size = 25
 
 while True:
@@ -68,17 +67,6 @@ while True:
 
         cv2.putText(frame, f"Bottle: X={x_real:.1f}cm, Y={y_real:.1f}cm", 
                     (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
-        
-        x11 = x_real
-        y11 = y_real
-
-        x01 = - 35.5
-        y01 = 89
-
-        x21 = x01 + x11
-        y21 = y01 - y11
-
-        print(x21, y21, x_real, y_real)
         
     cv2.imshow("Webcam YOLO Detection", frame)
 
